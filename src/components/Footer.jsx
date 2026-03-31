@@ -5,7 +5,7 @@ export default function Footer(){
     <footer className="site-footer">
       <div className="container footer-content">
         <div className="footer-section">
-          <h4>DiSidio Labs</h4>
+          <h4>DataQuiver</h4>
           <p>Creative + Tech Digital Services</p>
           <p className="tagline-sm">Design. Develop. Brand. Deliver.</p>
         </div>
@@ -54,7 +54,7 @@ export default function Footer(){
 
       <div className="footer-bottom">
         <div className="container">
-          <p>© {new Date().getFullYear()} DiSidio Labs — All rights reserved. | Design. Develop. Brand. Deliver.</p>
+          <p>© {new Date().getFullYear()} DataQuiver — All rights reserved. | Design. Develop. Brand. Deliver.</p>
         </div>
       </div>
     </footer>

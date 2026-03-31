@@ -13,7 +13,7 @@
       <rect x="460" width="420" height="240" rx="12" fill="#fff1e6" />
       <rect y="280" width="420" height="180" rx="12" fill="#eafff1" />
       <rect x="460" y="280" width="420" height="180" rx="12" fill="#fff0f6" />
-      <text x="50" y="130" fill="#1f6feb" font-size="28">DiSidio Labs</text>
+      <text x="50" y="130" fill="#1f6feb" font-size="28">DataQuiver</text>
     </g>
   </g>
 </svg>

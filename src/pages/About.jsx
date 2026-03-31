@@ -6,7 +6,7 @@ export default function About(){
     <>
       <section className="section about-hero">
         <div className="container">
-          <h1>About DiSidio Labs</h1>
+          <h1>About DataQuiver</h1>
           <p className="lead">We are a creative and technical studio dedicated to delivering exceptional digital solutions that transform businesses.</p>
         </div>
       </section>
@@ -16,7 +16,7 @@ export default function About(){
           <div className="story-content">
             <div className="story-text">
               <h2>Our Story</h2>
-              <p>DiSidio Labs was founded on a simple belief: great design and solid development should work together, not separately. We combine creative vision with technical expertise to deliver digital solutions that don't just look good—they work brilliantly.</p>
+              <p>DataQuiver was founded on a simple belief: great design and solid development should work together, not separately. We combine creative vision with technical expertise to deliver digital solutions that don't just look good—they work brilliantly.</p>
               <p>Since our inception, we've worked with startups, SMEs, and established businesses across various industries. Every project reinforces our commitment to quality, innovation, and client success.</p>
             </div>
           </div>

@@ -7,7 +7,7 @@ export default function Navbar(){
   return (
     <header className="nav">
       <div className="nav-inner container">
-        <Link to="/" className="brand">DiSidio Labs</Link>
+        <Link to="/" className="brand">DataQuiver</Link>
 
         <button
           className={`menu-btn ${open ? 'open' : ''}`}
