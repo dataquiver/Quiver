@@ -25,7 +25,7 @@ export default function Home(){
       <section className="hero">
         <div className="container hero-grid">
           <div className="hero-copy">
-            <h1>DiSidio Labs — Creative + Tech Digital Services</h1>
+            <h1>DataQuiver  — Creative + Tech Digital Services</h1>
             <p className="tagline">Design. Develop. Brand. Deliver.</p>
             <div className="hero-ctas">
               <Link to="/portfolio" className="btn primary">Check our portfolio</Link>
@@ -33,7 +33,7 @@ export default function Home(){
             </div>
           </div>
           <div className="hero-art">
-            <img src="/images/solution.jpg" alt="DiSidio Labs illustration" style={{borderRadius: '12px'}} />
+            <img src="/images/solution.jpg" alt="DataQuiver Labs illustration" style={{borderRadius: '12px'}} />
           </div>
         </div>
       </section>
