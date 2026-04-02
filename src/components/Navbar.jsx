@@ -7,7 +7,9 @@ export default function Navbar(){
   return (
     <header className="nav">
       <div className="nav-inner container">
-        <Link to="/" className="brand">DataQuiver</Link>
+        <Link to="/" className="brand">
+          <img src="/images/FinalLogoQ.svg" alt="DataQuiver" className="brand-logo" />
+        </Link>
 
         <button
           className={`menu-btn ${open ? 'open' : ''}`}
