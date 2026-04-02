@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1080 1080">
+  <!-- Generator: Adobe Illustrator 30.0.0, SVG Export Plug-In . SVG Version: 2.1.1 Build 123)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: url(#linear-gradient1);
+      }
+
+      .st1 {
+        fill: #e0e0e0;
+      }
+
+      .st2 {
+        fill: #00599b;
+        font-family: Nebula, Nebula;
+        font-size: 82.41px;
+      }
+
+      .st3 {
+        fill: url(#linear-gradient);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="275.03" y1="469.84" x2="804.97" y2="469.84" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1f6ce7"/>
+      <stop offset="1" stop-color="#1e49ba"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient1" x1="275.03" x2="804.97" xlink:href="#linear-gradient"/>
+  </defs>
+  <text class="st2" transform="translate(219.85 839.61)"><tspan x="0" y="0">DATAQUiVER</tspan></text>
+  <g>
+    <path class="st1" d="M275.03,469.84c0,100.11,55.53,187.24,137.45,232.31V237.53c-81.93,45.07-137.45,132.2-137.45,232.31Z"/>
+    <path class="st3" d="M275.03,469.84c0,100.11,55.53,187.24,137.45,232.31V237.53c-81.93,45.07-137.45,132.2-137.45,232.31Z"/>
+    <path class="st1" d="M540,204.87c-22.25,0-43.85,2.76-64.5,7.92v514.09c20.65,5.16,42.25,7.92,64.5,7.92,60.28,0,115.84-20.14,160.36-54.04l-105.03-105.03c-12.75-12.75-12.75-33.41,0-46.16h0c12.75-12.75,33.41-12.75,46.16,0l105.57,105.57c36.23-45.32,57.9-102.78,57.9-165.31,0-146.34-118.63-264.97-264.97-264.97Z"/>
+    <path class="st0" d="M540,204.87c-22.25,0-43.85,2.76-64.5,7.92v514.09c20.65,5.16,42.25,7.92,64.5,7.92,60.28,0,115.84-20.14,160.36-54.04l-105.03-105.03c-12.75-12.75-12.75-33.41,0-46.16h0c12.75-12.75,33.41-12.75,46.16,0l105.57,105.57c36.23-45.32,57.9-102.78,57.9-165.31,0-146.34-118.63-264.97-264.97-264.97Z"/>
+  </g>
+</svg>
