@@ -1,9 +1,5 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import uiuxImg from '../assets/uiux-design.jpg'
-import webImg from '../assets/web-design.jpg'
-import brandImg from '../assets/branding.jpg'
-import uxImg from '../assets/user-experience-interface-design.jpg'
 import { SITE_INFO, buildWhatsAppUrl } from '../config/site'
 
 export default function Home(){
@@ -44,25 +40,25 @@ export default function Home(){
           <h2>What we do</h2>
           <div className="services-grid">
             <div className="service-card">
-              <img src={uiuxImg} alt="UI/UX Design" className="service-image" />
+              <img src="/images/uiux-design.jpg" alt="UI/UX Design" className="service-image" />
               <h3>UI/UX Design</h3>
               <p>Figma-led product design for SaaS, mobile and website redesigns. We create intuitive interfaces that delight users and drive conversions.</p>
               <Link to="/services">Learn more →</Link>
             </div>
             <div className="service-card">
-              <img src={webImg} alt="Web Design" className="service-image" />
+              <img src="/images/web-design.jpg" alt="Web Design" className="service-image" />
               <h3>Web Development</h3>
               <p>Production-ready frontends, WordPress/Wix setups and performant builds. Modern, responsive, and fast websites designed to scale.</p>
               <Link to="/services">Learn more →</Link>
             </div>
             <div className="service-card">
-              <img src={brandImg} alt="Branding" className="service-image" />
+              <img src="/images/Branding.jpg" alt="Branding" className="service-image" />
               <h3>Branding</h3>
               <p>Logo systems, marketing assets and social graphics to amplify your brand. Complete visual identity that tells your story.</p>
               <Link to="/services">Learn more →</Link>
             </div>
             <div className="service-card">
-              <img src={uxImg} alt="User Experience" className="service-image" />
+              <img src="/images/user-experience-interface-design.jpg" alt="User Experience" className="service-image" />
               <h3>Digital Strategy</h3>
               <p>End-to-end digital solutions combining design thinking with technical expertise. From concept to launch, we bring your vision to life.</p>
               <Link to="/services">Learn more →</Link>
