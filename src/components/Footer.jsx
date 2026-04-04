@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Footer(){
   return (
@@ -13,10 +14,10 @@ export default function Footer(){
         <div className="footer-section">
           <h4>Quick Links</h4>
           <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/services">Services</a></li>
-            <li><a href="/portfolio">Portfolio</a></li>
-            <li><a href="/about">About</a></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/services">Services</Link></li>
+            <li><Link to="/portfolio">Portfolio</Link></li>
+            <li><Link to="/about">About</Link></li>
           </ul>
         </div>
 
@@ -36,18 +37,10 @@ export default function Footer(){
         <div className="footer-section">
           <h4>Follow Us</h4>
           <div className="social-links">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" title="Instagram">
-              📷 Instagram
-            </a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook">
-              📘 Facebook
-            </a>
-            <a href="https://x.com" target="_blank" rel="noopener noreferrer" title="X">
-              𝕏 X
-            </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" title="LinkedIn">
-              💼 LinkedIn
-            </a>
+            <p className="social-placeholder">Instagram: profile link updating</p>
+            <p className="social-placeholder">Facebook: profile link updating</p>
+            <p className="social-placeholder">X: profile link updating</p>
+            <p className="social-placeholder">LinkedIn: profile link updating</p>
           </div>
         </div>
       </div>

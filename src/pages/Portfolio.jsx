@@ -49,7 +49,7 @@ const projects = [
     category: 'UI/UX',
     description: 'Landing page focused on conversions and product storytelling.',
     img: '/images/project2.svg',
-    demo: '#',
+    demo: '',
     results: ['Higher engagement', 'A/B test winners']
   }
 ]
@@ -73,6 +73,7 @@ export default function Portfolio(){
               const imgSrc = p.img && p.img.startsWith('/') ? base + p.img.replace(/^\//, '') : (p.img || '')
               const screenshots = (p.screenshots || []).map(s => s && s.startsWith('/') ? base + s.replace(/^\//, '') : s)
               const project = { ...p, img: imgSrc, screenshots }
+              const hasLiveDemo = /^https?:\/\//.test(project.demo)
               return (
                 <article key={p.id} className="project-card">
                 <div className="project-media">
@@ -93,8 +94,14 @@ export default function Portfolio(){
                   </div>
 
                   <div className="project-actions">
-                    <button className="btn" onClick={()=>setPreview(project)}>Live Preview</button>
-                    <a className="btn primary" href={project.demo} target="_blank" rel="noopener noreferrer">Open live</a>
+                    {hasLiveDemo ? (
+                      <>
+                        <button className="btn" onClick={()=>setPreview(project)}>Live Preview</button>
+                        <a className="btn primary" href={project.demo} target="_blank" rel="noopener noreferrer">Open live</a>
+                      </>
+                    ) : (
+                      <button className="btn disabled" type="button" disabled>No live demo yet</button>
+                    )}
                   </div>
                 </div>
                 </article>
