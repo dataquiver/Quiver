@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import PreviewModal from '../components/PreviewModal'
+import { SITE_INFO } from '../config/site'
 
 const projects = [
   {
@@ -62,9 +63,7 @@ export default function Portfolio(){
         <div className="container">
           <div className="page-header">
             <h1 className="page-title">Our Portfolio</h1>
-            <p className="page-lead">
-              Showcasing our recent work across UI/UX design, web development, and branding projects.
-            </p>
+            <p className="page-lead">Showcasing recent work by {SITE_INFO.brandName} across UI/UX design, web development, and branding projects.</p>
           </div>
 
           <div className="portfolio-grid">
