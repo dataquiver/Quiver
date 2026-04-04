@@ -4,6 +4,7 @@ import uiuxImg from '../assets/uiux-design.jpg'
 import webImg from '../assets/web-design.jpg'
 import brandImg from '../assets/branding.jpg'
 import uxImg from '../assets/user-experience-interface-design.jpg'
+import { SITE_INFO, buildWhatsAppUrl } from '../config/site'
 
 export default function Home(){
   const [whatsappForm, setWhatsappForm] = useState({
@@ -15,7 +16,7 @@ export default function Home(){
   const handleWhatsappInquiry = (e) => {
     e.preventDefault()
     const message = `Hello! I'm ${whatsappForm.name} and I'm interested in ${whatsappForm.service || 'your services'}.${whatsappForm.comments ? `\n\nProject Details:\n${whatsappForm.comments}` : ''}`
-    const whatsappUrl = `https://wa.me/919972309439?text=${encodeURIComponent(message)}`
+    const whatsappUrl = buildWhatsAppUrl(message)
     window.open(whatsappUrl, '_blank')
     setWhatsappForm({ name: '', service: '', comments: '' })
   }
@@ -25,15 +26,15 @@ export default function Home(){
       <section className="hero">
         <div className="container hero-grid">
           <div className="hero-copy">
-            <h1>DataQuiver  — Creative + Tech Digital Services</h1>
-            <p className="tagline">Design. Develop. Brand. Deliver.</p>
+            <h1>{SITE_INFO.brandName}  — Creative + Tech Digital Services</h1>
+            <p className="tagline">{SITE_INFO.tagline}</p>
             <div className="hero-ctas">
               <Link to="/portfolio" className="btn primary">Check our portfolio</Link>
-              <a href="https://wa.me/919972309439?text=Hi, I'd like to inquire about your services." className="btn" target="_blank" rel="noopener noreferrer">Inquire on WhatsApp</a>
+              <a href={buildWhatsAppUrl("Hi, I'd like to inquire about your services.")} className="btn" target="_blank" rel="noopener noreferrer">Inquire on WhatsApp</a>
             </div>
           </div>
           <div className="hero-art">
-            <img src="/images/solution.jpg" alt="DataQuiver Labs illustration" style={{borderRadius: '12px'}} />
+            <img src="/images/solution.jpg" alt="DataQuiver Labs illustration" className="hero-image" />
           </div>
         </div>
       </section>

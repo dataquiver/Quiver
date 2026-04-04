@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { SITE_INFO, buildWhatsAppUrl } from '../config/site'
 
 export default function Contact(){
   const [formData, setFormData] = useState({
@@ -10,40 +11,40 @@ export default function Contact(){
   const handleWhatsAppSubmit = (e) => {
     e.preventDefault()
     const message = `Hello! My name is ${formData.name}. Email: ${formData.email}\n\nProject Details:\n${formData.message}`
-    const whatsappUrl = `https://wa.me/919972309439?text=${encodeURIComponent(message)}`
+    const whatsappUrl = buildWhatsAppUrl(message)
     window.open(whatsappUrl, '_blank')
     setFormData({ name: '', email: '', message: '' })
   }
 
   return (
     <>
-      <section className="section" style={{paddingTop: '120px'}}>
+      <section className="section contact-page">
         <div className="container">
-          <div style={{textAlign: 'center', marginBottom: '60px'}}>
-            <h1 style={{marginBottom: '16px'}}>Get In Touch</h1>
-            <p style={{color: '#6b7280', fontSize: '18px', maxWidth: '600px', margin: '0 auto'}}>
+          <div className="page-header">
+            <h1 className="page-title">Get In Touch</h1>
+            <p className="page-lead">
               We'd love to hear from you. Reach out via WhatsApp for instant support or use the contact form to share more details about your project.
             </p>
           </div>
 
           <div className="contact-options">
             <div className="contact-method">
-              <div style={{fontSize: '40px', marginBottom: '16px'}}>💬</div>
+              <div className="contact-icon">💬</div>
               <h3>WhatsApp</h3>
               <p>Get instant response for quick conversations</p>
-              <a href="https://wa.me/919972309439" className="btn primary" target="_blank" rel="noopener noreferrer">Message on WhatsApp</a>
+              <a href={buildWhatsAppUrl('Hi, I would like to discuss my project requirements.')} className="btn primary" target="_blank" rel="noopener noreferrer">Message on WhatsApp</a>
             </div>
             <div className="contact-method">
-              <div style={{fontSize: '40px', marginBottom: '16px'}}>📧</div>
+              <div className="contact-icon">📧</div>
               <h3>Email</h3>
-              <p>jeev9673@gmail.com</p>
-              <a href="mailto:jeev9673@gmail.com" className="btn">Send Email</a>
+              <p>{SITE_INFO.email}</p>
+              <a href={`mailto:${SITE_INFO.email}`} className="btn">Send Email</a>
             </div>
             <div className="contact-method">
-              <div style={{fontSize: '40px', marginBottom: '16px'}}>📞</div>
+              <div className="contact-icon">📞</div>
               <h3>Phone</h3>
-              <p>+91 9972309439</p>
-              <a href="tel:+919972309439" className="btn">Call Us</a>
+              <p>{SITE_INFO.phoneDisplay}</p>
+              <a href={`tel:${SITE_INFO.phoneE164}`} className="btn">Call Us</a>
             </div>
           </div>
 
@@ -72,7 +73,7 @@ export default function Contact(){
                 onChange={(e) => setFormData({...formData, message: e.target.value})}
                 required
               ></textarea>
-              <button className="btn primary" style={{width: '100%'}}>Send via WhatsApp</button>
+              <button className="btn primary full-width">Send via WhatsApp</button>
             </form>
           </div>
         </div>

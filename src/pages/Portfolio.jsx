@@ -58,11 +58,11 @@ export default function Portfolio(){
   const [preview, setPreview] = useState(null)
   return (
     <>
-      <section className="section" style={{paddingTop: '120px', background: 'linear-gradient(135deg, #f8fafc 0%, #f0f7ff 100%)'}}>
+      <section className="section portfolio-page">
         <div className="container">
-          <div style={{textAlign: 'center', marginBottom: '60px'}}>
-            <h1 style={{marginBottom: '16px'}}>Our Portfolio</h1>
-            <p style={{color: '#6b7280', fontSize: '18px', maxWidth: '600px', margin: '0 auto'}}>
+          <div className="page-header">
+            <h1 className="page-title">Our Portfolio</h1>
+            <p className="page-lead">
               Showcasing our recent work across UI/UX design, web development, and branding projects.
             </p>
           </div>

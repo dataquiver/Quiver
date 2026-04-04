@@ -329,6 +329,10 @@ h1, h2, h3, h4, h5, h6, .section h1, .section h2 {
   transform: translateY(-10px);
 }
 
+.hero-image {
+  border-radius: 12px;
+}
+
 /* ============ SECTIONS ============ */
 .section {
   padding: 80px 0;
@@ -348,6 +352,26 @@ h1, h2, h3, h4, h5, h6, .section h1, .section h2 {
   font-weight: 800;
   color: var(--text-dark);
   letter-spacing: -1px;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.page-title {
+  margin-bottom: 16px;
+}
+
+.page-lead {
+  color: var(--muted);
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.full-width {
+  width: 100%;
 }
 
 /* ============ SERVICES PREVIEW ============ */
@@ -1179,6 +1203,15 @@ h1, h2, h3, h4, h5, h6, .section h1, .section h2 {
 }
 
 /* ============ CONTACT PAGE ============ */
+.contact-page {
+  padding-top: 120px;
+}
+
+.contact-icon {
+  font-size: 40px;
+  margin-bottom: 16px;
+}
+
 .contact-options {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -1232,6 +1265,11 @@ h1, h2, h3, h4, h5, h6, .section h1, .section h2 {
 .contact-form-section p {
   color: var(--muted);
   margin-bottom: 32px;
+}
+
+.portfolio-page {
+  padding-top: 120px;
+  background: linear-gradient(135deg, #f8fafc 0%, #f0f7ff 100%);
 }
 
 /* ============ RESPONSIVE DESIGN ============ */
