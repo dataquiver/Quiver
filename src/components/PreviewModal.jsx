@@ -5,18 +5,21 @@ export default function PreviewModal({ project, onClose }){
   const [status, setStatus] = useState('loading') // loading | ready | blocked
   const [index, setIndex] = useState(0) // for screenshots carousel
   const touchStartX = useRef(null)
+  const hasLiveDemo = /^https?:\/\//.test(project?.demo || '')
 
   useEffect(()=>{
     if(!project) return
-    setStatus('loading')
+    setStatus(hasLiveDemo ? 'loading' : 'blocked')
     setIndex(0)
     const iframe = iframeRef.current
     let timer = null
 
-    // fallback timeout: if load doesn't fire, assume blocked
-    timer = setTimeout(()=>{
-      setStatus(prev => prev === 'ready' ? 'ready' : 'blocked')
-    }, 2000)
+    if(hasLiveDemo){
+      // fallback timeout: if load doesn't fire, assume blocked
+      timer = setTimeout(()=>{
+        setStatus(prev => prev === 'ready' ? 'ready' : 'blocked')
+      }, 2000)
+    }
 
     // ESC handler
     function onKey(e){ if(e.key === 'Escape') onClose() }
@@ -26,7 +29,7 @@ export default function PreviewModal({ project, onClose }){
       clearTimeout(timer)
       window.removeEventListener('keydown', onKey)
     }
-  }, [project, onClose])
+  }, [project, onClose, hasLiveDemo])
 
   if(!project) return null
 
@@ -50,7 +53,9 @@ export default function PreviewModal({ project, onClose }){
         <header className="preview-header">
           <h3>{project.title}</h3>
           <div>
-            <a className="btn" href={project.demo} target="_blank" rel="noopener noreferrer">Open live</a>
+            {hasLiveDemo && (
+              <a className="btn" href={project.demo} target="_blank" rel="noopener noreferrer">Open live</a>
+            )}
             <button className="btn" onClick={onClose}>Close</button>
           </div>
         </header>
@@ -63,15 +68,17 @@ export default function PreviewModal({ project, onClose }){
             </div>
           )}
 
-          <iframe
-            ref={iframeRef}
-            title={project.title}
-            src={project.demo}
-            frameBorder="0"
-            sandbox="allow-same-origin allow-scripts allow-forms allow-popups"
-            style={{display: status === 'ready' ? 'block' : 'none', width: '100%', height: 560}}
-            onLoad={() => setStatus('ready')}
-          />
+          {hasLiveDemo && (
+            <iframe
+              ref={iframeRef}
+              title={project.title}
+              src={project.demo}
+              frameBorder="0"
+              sandbox="allow-same-origin allow-scripts allow-forms allow-popups"
+              style={{display: status === 'ready' ? 'block' : 'none', width: '100%', height: 560}}
+              onLoad={() => setStatus('ready')}
+            />
+          )}
 
           {status === 'blocked' && (
             <div className="preview-fallback" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
@@ -86,8 +93,10 @@ export default function PreviewModal({ project, onClose }){
                 )}
               </div>
               <div className="fallback-text">
-                <p>Embedding is blocked by the target site. Use the screenshot or open the live site.</p>
-                <a className="btn primary" href={project.demo} target="_blank" rel="noopener noreferrer">Open live site</a>
+                <p>{hasLiveDemo ? 'Embedding is blocked by the target site. Use the screenshot or open the live site.' : 'A live URL is not available yet. Use the screenshot preview for now.'}</p>
+                {hasLiveDemo && (
+                  <a className="btn primary" href={project.demo} target="_blank" rel="noopener noreferrer">Open live site</a>
+                )}
               </div>
             </div>
           )}

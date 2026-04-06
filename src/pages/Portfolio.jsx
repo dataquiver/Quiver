@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import PreviewModal from '../components/PreviewModal'
+import { SITE_INFO } from '../config/site'
 
 const projects = [
   {
@@ -49,7 +50,7 @@ const projects = [
     category: 'UI/UX',
     description: 'Landing page focused on conversions and product storytelling.',
     img: '/images/project2.svg',
-    demo: '#',
+    demo: '',
     results: ['Higher engagement', 'A/B test winners']
   }
 ]
@@ -58,13 +59,11 @@ export default function Portfolio(){
   const [preview, setPreview] = useState(null)
   return (
     <>
-      <section className="section" style={{paddingTop: '120px', background: 'linear-gradient(135deg, #f8fafc 0%, #f0f7ff 100%)'}}>
+      <section className="section portfolio-page">
         <div className="container">
-          <div style={{textAlign: 'center', marginBottom: '60px'}}>
-            <h1 style={{marginBottom: '16px'}}>Our Portfolio</h1>
-            <p style={{color: '#6b7280', fontSize: '18px', maxWidth: '600px', margin: '0 auto'}}>
-              Showcasing our recent work across UI/UX design, web development, and branding projects.
-            </p>
+          <div className="page-header">
+            <h1 className="page-title">Our Portfolio</h1>
+            <p className="page-lead">Showcasing recent work by {SITE_INFO.brandName} across UI/UX design, web development, and branding projects.</p>
           </div>
 
           <div className="portfolio-grid">
@@ -73,6 +72,7 @@ export default function Portfolio(){
               const imgSrc = p.img && p.img.startsWith('/') ? base + p.img.replace(/^\//, '') : (p.img || '')
               const screenshots = (p.screenshots || []).map(s => s && s.startsWith('/') ? base + s.replace(/^\//, '') : s)
               const project = { ...p, img: imgSrc, screenshots }
+              const hasLiveDemo = /^https?:\/\//.test(project.demo)
               return (
                 <article key={p.id} className="project-card">
                 <div className="project-media">
@@ -93,8 +93,14 @@ export default function Portfolio(){
                   </div>
 
                   <div className="project-actions">
-                    <button className="btn" onClick={()=>setPreview(project)}>Live Preview</button>
-                    <a className="btn primary" href={project.demo} target="_blank" rel="noopener noreferrer">Open live</a>
+                    {hasLiveDemo ? (
+                      <>
+                        <button className="btn" onClick={()=>setPreview(project)}>Live Preview</button>
+                        <a className="btn primary" href={project.demo} target="_blank" rel="noopener noreferrer">Open live</a>
+                      </>
+                    ) : (
+                      <button className="btn disabled" type="button" disabled>No live demo yet</button>
+                    )}
                   </div>
                 </div>
                 </article>
